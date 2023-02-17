@@ -27,4 +27,7 @@ spec:
             - name: MONGO_INITDB_ROOT_USERNAME
               value: admin
             - name: MONGO_INITDB_ROOT_PASSWORD
-              value: supersecret
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-creds
+                  key: admin-password

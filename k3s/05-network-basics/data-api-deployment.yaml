@@ -25,4 +25,7 @@ spec:
 
           env:
             - name: MONGO_CONNSTR
-              value: mongodb://admin:supersecret@database
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-creds
+                  key: connection-string
